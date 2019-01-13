@@ -22,5 +22,5 @@ class Employee(models.Model):
     def get_full_name(self):
         return self.firstname + " " + self.lastname
 
-    
-
+    def get_children(self):
+        return self.objects.filter(boss=self)
